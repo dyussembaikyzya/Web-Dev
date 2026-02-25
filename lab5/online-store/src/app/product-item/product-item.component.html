@@ -1,0 +1,30 @@
+<div class="card">
+  <img class="main" [src]="product().image" [alt]="product().name" />
+
+  <div class="body">
+    <h3 class="title">{{ product().name }}</h3>
+    <p class="desc">{{ product().description }}</p>
+
+    <div class="row">
+      <div class="price">{{ product().price }} ₸</div>
+      <div class="rating">⭐ {{ product().rating }}</div>
+    </div>
+
+    <div class="likes">❤️ {{ product().likes }}</div>
+
+    <div class="gallery">
+      @for (img of product().images; track img) {
+        <img [src]="img" alt="photo" />
+      }
+    </div>
+
+    <div class="actions">
+      <a class="btn" [href]="product().link" target="_blank">Open on Kaspi</a>
+      <button class="btn" (click)="shareWhatsApp()">Share WhatsApp</button>
+      <button class="btn" (click)="shareTelegram()">Share Telegram</button>
+
+      <button class="btn like" (click)="like()">Like +1</button>
+      <button class="btn danger" (click)="remove()">Delete</button>
+    </div>
+  </div>
+</div>

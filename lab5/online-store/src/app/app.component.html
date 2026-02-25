@@ -1,0 +1,31 @@
+<div class="layout">
+  <aside class="sidebar">
+    <h2 class="logo">Online Store</h2>
+
+    <div class="cats">
+      @for (c of categories; track c.id) {
+        <button
+          class="cat"
+          [class.active]="isSelected(c.id)"
+          (click)="selectCategory(c.id)"
+        >
+          {{ c.name }}
+        </button>
+      }
+    </div>
+  </aside>
+
+  <main class="content">
+    @if (selectedCategoryId === null) {
+      <div class="empty">
+        <h2>Choose a category 👈</h2>
+        <p>После выбора появятся товары.</p>
+      </div>
+    } @else {
+      <app-product-list
+        [products]="selectedProducts"
+        (deleteProduct)="handleDelete($event)"
+        />
+    }
+  </main>
+</div>

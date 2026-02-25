@@ -1,0 +1,49 @@
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  background: #f6f7fb;
+}
+
+.sidebar {
+  background: #ffffff;
+  border-right: 1px solid #e6e6ef;
+  padding: 18px;
+}
+
+.logo {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+
+.cats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cat {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid #e6e6ef;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cat.active {
+  border-color: #111827;
+  background: #111827;
+  color: white;
+}
+
+.content {
+  padding: 18px;
+}
+
+.empty {
+  background: white;
+  border: 1px solid #e6e6ef;
+  border-radius: 14px;
+  padding: 24px;
+}

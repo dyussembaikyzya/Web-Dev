@@ -1,0 +1,15 @@
+@if (products().length === 0) {
+  <div class="no">
+    <h3>No products in this category</h3>
+    <p>Ты уже всё удалила 😄</p>
+  </div>
+} @else {
+  <div class="grid">
+    @for (p of products(); track p.id) {
+      <app-product-item
+        [product]="p"
+        (delete)="onDelete($event)"
+      />
+    }
+  </div>
+}
