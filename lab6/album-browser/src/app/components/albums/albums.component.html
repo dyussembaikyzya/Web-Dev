@@ -1,0 +1,31 @@
+<h2 class="page-title">Albums</h2>
+<p class="subtitle">Click an album to open details. You can also delete it.</p>
+
+<div *ngIf="loading" class="state">Loading albums...</div>
+
+<div *ngIf="!loading && error" class="state error">
+  {{ error }}
+</div>
+
+<div *ngIf="!loading && !error" class="list">
+  <div
+    class="row"
+    *ngFor="let a of albums"
+    [routerLink]="['/albums', a.id]"
+    role="link"
+    tabindex="0"
+  >
+    <div class="left">
+      <span class="badge">#{{ a.id }}</span>
+      <span class="title">{{ a.title }}</span>
+    </div>
+
+    <button
+      type="button"
+      class="btn danger"
+      (click)="deleteAlbum(a.id, $event)"
+    >
+      Delete
+    </button>
+  </div>
+</div>

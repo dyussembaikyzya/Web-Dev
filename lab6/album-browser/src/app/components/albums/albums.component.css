@@ -1,0 +1,102 @@
+.page-title {
+  text-align: center;
+  margin: 24px 0 6px;
+  font-size: 34px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 0 0 22px;
+  opacity: 0.75;
+}
+
+.state {
+  max-width: 760px;
+  margin: 16px auto;
+  padding: 14px 16px;
+  border: 1px dashed rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.state.error {
+  border-style: solid;
+  border-color: rgba(180, 0, 0, 0.35);
+  color: #8a0000;
+  background: rgba(180, 0, 0, 0.06);
+}
+
+.list {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  display: grid;
+  gap: 10px;
+  padding: 0 16px;
+}
+
+.row {
+  cursor: pointer; /* добавь */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.row:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  background: rgba(0, 0, 0, 0.03);
+  flex: 0 0 auto;
+}
+
+.title {
+  font-size: 14px;
+  line-height: 1.2;
+  opacity: 0.9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn {
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  background: white;
+  padding: 7px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  flex: 0 0 auto;
+}
+
+.btn:hover {
+  filter: brightness(0.97);
+}
+
+.btn.danger {
+  border-color: rgba(170, 0, 0, 0.25);
+  background: rgba(170, 0, 0, 0.06);
+  color: #8a0000;
+}

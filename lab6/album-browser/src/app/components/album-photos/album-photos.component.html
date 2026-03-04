@@ -1,0 +1,24 @@
+<div class="wrap">
+  <div class="head">
+    <div>
+      <h2 class="title">Photos</h2>
+      <p class="sub">Album #{{ albumId }}</p>
+    </div>
+
+    <a class="btn ghost" [routerLink]="['/albums', albumId]">Back</a>
+  </div>
+
+  <div *ngIf="loading" class="state">Loading photos...</div>
+  <div *ngIf="!loading && error" class="state error">{{ error }}</div>
+
+  <div *ngIf="!loading && !error && photos.length === 0" class="state">
+    No photos found.
+  </div>
+
+  <div *ngIf="!loading && !error && photos.length > 0" class="grid">
+    <div class="card" *ngFor="let p of photos">
+      <img [src]="'https://picsum.photos/200?random=' + p.id" [alt]="p.title" />
+      <div class="caption" [title]="p.title">{{ p.title }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="wrap">
+  <div class="card">
+    <h2 class="title">Album #{{ albumId }}</h2>
+
+    <div *ngIf="loading" class="state">Loading album...</div>
+
+    <div *ngIf="!loading && error" class="state error">
+      {{ error }}
+    </div>
+
+    <div *ngIf="!loading && album" class="content">
+      <div class="meta">
+        <div class="pill">UserId: <b>{{ album.userId }}</b></div>
+      </div>
+
+      <label class="label">Title</label>
+      <input
+        class="input"
+        type="text"
+        [(ngModel)]="editedTitle"
+        placeholder="Album title"
+      />
+
+      <div class="actions">
+        <button
+          type="button"
+          class="btn primary"
+          (click)="save()"
+          [disabled]="saving"
+        >
+          {{ saving ? 'Saving...' : 'Save' }}
+        </button>
+
+        <a class="btn" [routerLink]="['/albums', albumId, 'photos']">
+          View Photos
+        </a>
+
+        <a class="btn ghost" routerLink="/albums">Back</a>
+      </div>
+
+      <div *ngIf="savedMsg" class="saved">
+        {{ savedMsg }}
+      </div>
+    </div>
+  </div>
+</div>

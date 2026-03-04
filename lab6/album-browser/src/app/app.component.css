@@ -1,0 +1,69 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.92);
+  color: #fff;
+  font-size: 14px;
+}
+
+.name {
+  letter-spacing: -0.3px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.02);
+  transition: filter 120ms ease, transform 120ms ease;
+}
+
+.link:hover {
+  filter: brightness(0.97);
+  transform: translateY(-1px);
+}
+
+.link.active {
+  background: rgba(0, 0, 0, 0.92);
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0.92);
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px 16px 60px;
+}

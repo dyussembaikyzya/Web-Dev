@@ -1,0 +1,16 @@
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 18px;
+  background: #fff;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  background: #111827;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
